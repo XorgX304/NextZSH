@@ -19,7 +19,6 @@ fi
 export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export HISTIGNORE="*sudo -S*"
-echo JwdR053 | sudo -S -v
 alias zshconfig="sudo kate ~/.zshrc"
 alias ohmyzsh="sudo leafpad ~/.oh-my-zsh"
 alias ins="sudo apt-get install"
@@ -121,7 +120,6 @@ echo "Menu için BoszMenu veya kısayol bm yaz! By Bosz Mand. " | nms -a -f red
 #BoszMenu
 alias bm="BoszMenu"
 echo "$(tput sgr 0 1)$(tput bold)$(tput setaf 2)$(tput setab 0)Menu için 'BoszMenu' veya kısayol 'bm' yaz!$(tput sgr 0) By Bosz Mand."
-source $ZSH/oh-my-zsh.sh
 alias betty='/home/betarax/betty/main.rb'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -132,16 +130,9 @@ antigen bundle <<EOBUNDLES
     zsh-users/zsh-autosuggestions
       zsh-users/zsh-completions
 EOBUNDLES
-antigen theme robbyrussell
 antigen applysource /home/betarax/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_THEME="agnoster"
-POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
-POWERLEVEL9K_MODE='nerdfont-complete'
 antigen apply
 source ~/.fonts/*.sh
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
 sudo modprobe pcspkr
