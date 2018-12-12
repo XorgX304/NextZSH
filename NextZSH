@@ -1,0 +1,147 @@
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export ZSH=/home/betarax/.oh-my-zsh
+ZSH_THEME="random"
+ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "fox" "spaceship" "strug" "frisk" "xiong-chiamiov" "duellj" "mira" "bira" "kiwi" "junkfood" "funky" "hyperzsh" "zeit")
+HYPHEN_INSENSITIVE="true"
+export UPDATE_ZSH_DAYS=13
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+plugins=(
+  rails git textmate ruby lighthouse npm node nodejs pip python zsh-better-npm-completion bundler dotenv osx rake rbenv rake-fast
+)
+export MANPATH="/usr/local/man:$MANPATH"
+export LANG=en_US.UTF-8
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR="nano"
+else
+  export EDITOR="nano"
+fi
+export ARCHFLAGS="-arch x86_64"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+export HISTIGNORE="*sudo -S*"
+echo JwdR053 | sudo -S -v
+alias zshconfig="sudo kate ~/.zshrc"
+alias ohmyzsh="sudo leafpad ~/.oh-my-zsh"
+alias ins="sudo apt-get install"
+alias gc="git clone"
+alias updb="sudo updatedb"
+alias uu="sudo apt-get update"
+alias dp="sudo dpkg --configure -a"
+alias aurm="sudo apt autoremove"
+alias se="sudo apt-cache search"
+alias site="sudo wget -p -k --span-hosts -r --no-parent --html-extension --convert-links --domains="
+alias e="sudo leafpad"
+alias ni="sudo npm install"
+alias chmd="sudo chmod +x *"
+alias down="cd /home/betarax/Downloads"
+alias phantomjs="/home/betarax/Downloads/phantomjs-2.1.1-linux-x86_64/bin/phantomjs"
+alias p="sudo python"
+clear
+echo "alias p=python\n"\
+"alias chmd=chmod +x *\n"\
+"alias down= cd downloads\n"\
+"alias zshconfig=sudo kate ~/.zshrc\n"\
+"alias ohmyzsh=sudo gedit ~/.oh-my-zsh\n"\
+"alias ins=sudo apt-get install\n"\
+"alias gc=git clone\n"\
+"alias updb=sudo updatedb\n"\
+"alias uu=sudo apt-get update\n"\
+"alias dp=dpkg --configure -a\n"\
+"alias aurm=sudo apt autoremove\n"\
+"alias se=sudo apt-cache search \n"\
+"alias site=wget -p -k -h --span-hosts -r --no-parent --html-extension --convert-links \n"\
+"alias e=sudo gedit\n"\
+"alias ni=npm install\n" | nms -a -f green
+export PATH="$PATH:$HOME/.rvm/bin"
+export GOPATH="~/go"
+export PATH="$PATH:$GOPATH/bin"
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOPATH=/usr/local/opt/go/bin
+source "/home/betarax/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+function pingbak(){
+for aaa in {1..10}
+do
+echo -e "$(tput setaf $(shuf -i 1-10 -n 1))" & sleep 7;echo -e "$(tput setaf $(shuf -i 1-10 -n 1))" & wait; echo -e "$(tput setaf $(shuf -i 1-10 -n 1))" & ping 192.168.1.1 -c 1; echo -e "$(tput setaf $(shuf -i 1-10 -n 1))" & ping google.com -c 1;echo -e "$(tput setaf $(shuf -i 1-10 -n 1))" & curl ident.me;
+wait & done
+}
+alias pb="pingbak"
+alias ip='echo "$(tput sgr 0 1)$(tput bold)$(tput setaf 1)$(tput setab 0) Out IP : $(curl ident.me) $(tput setaf 3) Proxy IP : $(proxychains curl ident.me)$(tput sgr 0)"'  
+rastrenk(){
+RANDD=$RANDOM;
+RANGG=7;
+let SON="(($RANDD%$RANGG)+1)";
+RANDDB=$RANDOM;
+let SON2="(($RANDDB%$RANGG)+1)";
+if [ $SON -eq $SON2 ]; then
+RANDD=$RANDOM;
+RANDDB=$RANDOM;
+let SON="(($RANDD%$RANGG)+1)";
+RANDDB=$RANDOM;
+let son2="(($RANDDB%$RANGG)+1)";
+rastrenk;
+else
+local sonuc="$(tput setaf $SON)$(tput setab $SON2)";
+echo "$sonuc"
+fi;
+};
+function BoszMenu () {
+(~/beep/Music/Star\ Wars\ -\ Darth\ Vader &)
+echo "$(tput setaf 1)$(tput setab 0)tor & proxychains & chrome(1)$(tput sgr 0)? or $(tput setaf 2)$(tput setab 0)Selenium(3)$(tput sgr 0)? or $(tput setaf 3)$(tput setab 0)$(tput bold)Nothing(2)$(tput sgr 0)? $(tput setaf 4) $(tput setab 0)$(tput bold)updatedb(4)$(tput sgr 0)? $(tput setaf 5) $(tput setab 0)$(tput bold)reboot(5)$(tput sgr 0) $(tput setaf 6) $(tput setab 0)$(tput bold)poweroff(6)$(tput sgr 0) $(tput setaf 1) $(tput setab 0)$(tput bold)apt autoremove(7)$(tput sgr 0) $(tput setaf 2) $(tput setab 0)dpkgfix(8)$(tput sgr 0) $(tput setaf 3) $(tput setab 0)$(tput bold)apt-get update --fix-missing(9)$(tput sgr 0) $(tput setaf 4) $(tput setab 0)$(tput bold)uu(update(10))$(tput sgr 0) $(tput setaf 5) $(tput setab 0)justtor(11)$(tput sgr 0) $(tput setaf 6) $(tput setab 0)stoptor(12)$(tput sgr 0) $(tput setaf 1) $(tput setab 0)$(tput bold)gereksizler(13)$(tput sgr 0) $(tput setaf 2) $(tput setab 0)$(tput bold)zshconfig(14)$(tput sgr 0) extra== anketatak(15) & Exit(16) & Music(17) & startservices(18) -- olumculHataGiderme(19) -- menu generator(20) -- olumculTemizlik(21)"
+rastrenk
+resullt=rastrenk
+select yn in "$(tput setaf $(( ( RANDOM % 7 )  + 1 )))$(tput setab 0)$(tput bold)1$(tput sgr 0)" "$(resullt)2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21"; do
+    case $yn in
+        1 )sudo service tor start; sudo proxychains chromium-browser --no-sandbox; break;;
+        2 )echo "iptal"; break;;
+        3 )(python /home/betarax/myauto.py &); break;;
+        4 )updb; break;;
+        5 )reboot; break;;
+        6 )poweroff; break;;
+        7 )aurm; break;;
+        8 )dp; break;;
+        9 )sudo apt-get update --fix-missing; break;;
+        10 )uu; break;; 
+        11 )sudo service tor start; break;;
+        12 )sudo service tor stop; break;;
+        13 )sudo service virtualbox stop; sudo service tftpd-hpa stop; sudo service speech-dispatcher stop; sudo service privoxy stop; sudo service  postgresql stop; sudo service php7.0-fpm stop; sudo service openvpn stop; sudo service ninja stop; sudo service nginx stop; sudo service mysql stop; sudo service mysql-mmm-agent stop; sudo service mysql-mmm-monitor stop; sudo service monotone stop; sudo service monopd stop; sudo service mono-xsp4 stop; sudo service mongodb stop; sudo service jitsi-videobridge stop; sudo service clamav-daemon stop; sudo service clamav-freshclam stop; sudo service clamav-milter stop; sudo service clamsmtp stop; sudo service apache2 stop; sudo service anon-proxy stop; break;;
+        14 )sudo leafpad ~/.zshrc; break;;    
+        15 )sudo service tor start; sayac=0;for i in {0..100000..10};do type tor;echo "$(tput setaf 1) $(tput setab 0)";wait & hash -r;echo "$(tput setaf 2) $(tput setab 0)";wait & sudo service tor stop;echo "$(tput setaf 4) $(tput setab 0)";sleep 5;echo "$(tput setaf 4) $(tput setab 0)";wait & sudo service tor start;echo "$(tput setaf 5)"; wait & sleep $(( ( RANDOM % 7 )  + 1 ));echo "$(tput setaf 1) $(tput setab 0)";wait & clear;wait & $((sayac=sayac+1));clear & echo "$sayac" & clear;wait & sudo proxychains4 curl http://45.55.4.67:8080/gicrawler/rest/gis/vote/348;wait & done;echo "$(tput setaf 7) $(tput sgr 0)"; break;;
+        16 )exit; break;;
+        17 )cmus; break;;
+	18 )sudo service virtualbox start; sudo service tftpd-hpa start; sudo service speech-dispatcher start; sudo service privoxy start; sudo service  postgresql start; sudo service php7.0-fpm start; sudo service openvpn start; sudo service ninja start; sudo service nginx start; sudo service mysql start; sudo service mysql-mmm-agent start; sudo service mysql-mmm-monitor start; sudo service monotone start; sudo service monopd start; sudo service mono-xsp4 start; sudo service mongodb start; sudo service jitsi-videobridge start; sudo service clamav-daemon start; sudo service clamav-freshclam start; sudo service clamav-milter start; sudo service clamsmtp start; sudo service apache2 start; sudo service anon-proxy start; break;;
+	19 )sudo aptitude update && sudo aptitude install gtkorphan~;wait & sleep 5;wait & echo "ara ara durmak lazım";wait & sleep 2; wait & sudo aptitude update && sudo aptitude upgrade;wait & sudo aptitude -f; break;;
+	20 )echo "https://github.com/JamieCruwys/bash-menu-generator"; break;;
+	21 )sudo apt-get clean;wait & sudo apt-get autoclean;wait & sudo apt-get -f install;wait & sudo dpkg --configure -a; wait & sudo apt-get -f install; break;;
+	#18 )for ii in {1..100} do sudo python -u sikici.py sonDuzeltilmisProxy.txt;sudo python sikici.py 09012018Proxy.txt;sudo python sikici.py newPrxy.txt; sudo python sikici.py fastProxies.txt;sudo python sikici.py hidemy2.txt;sudo python sikici.py hidemyassProxy.txt; sudo python sikici.py httpOnlyProxyler.txt; sudo python sikici.py newPrxy.txt; sudo python sikici.py proxxx; sudo python sikici.py proxy2yeni.txt ; sudo python sikici.py temizProxyOutputTXTCleaned.txt; sudo python sikici.py Downloads/output.txt & done; break;;
+esac
+done
+}
+echo "Menu için BoszMenu veya kısayol bm yaz! By Bosz Mand. " | nms -a -f red
+#auto start BoszMenu----
+#BoszMenu
+alias bm="BoszMenu"
+echo "$(tput sgr 0 1)$(tput bold)$(tput setaf 2)$(tput setab 0)Menu için 'BoszMenu' veya kısayol 'bm' yaz!$(tput sgr 0) By Bosz Mand."
+source $ZSH/oh-my-zsh.sh
+alias betty='/home/betarax/betty/main.rb'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source $HOME/antigen.zsh
+antigen bundle <<EOBUNDLES
+    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-autosuggestions
+      zsh-users/zsh-completions
+EOBUNDLES
+antigen theme robbyrussell
+antigen applysource /home/betarax/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_THEME="agnoster"
+POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+POWERLEVEL9K_MODE='nerdfont-complete'
+antigen apply
+source ~/.fonts/*.sh
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+sudo modprobe pcspkr
