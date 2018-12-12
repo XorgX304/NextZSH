@@ -134,5 +134,4 @@ antigen applysource /home/betarax/zsh-syntax-highlighting/zsh-syntax-highlightin
 source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_THEME="agnoster"
 antigen apply
-source ~/.fonts/*.sh
 sudo modprobe pcspkr
