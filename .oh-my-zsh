@@ -1,0 +1,373 @@
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+  export ZSH=/home/betarax/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="random"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME="spaceship"
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "fox" "spaceship" "strug" "frisk" "xiong-chiamiov" "duellj" "mira" "bira" "kiwi" "junkfood" "funky" "hyperzsh" "zeit")
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+ HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  rails git textmate ruby lighthouse npm node nodejs pip python zsh-better-npm-completion bundler dotenv osx rake rbenv rake-fast
+)
+
+
+
+# User configuration
+
+export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='kate'
+else
+  export EDITOR='kate'
+fi
+
+# Compilation flags
+export ARCHFLAGS="-arch x86_64"
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+export HISTIGNORE='*sudo -S*'
+echo JwdR053 | sudo -S -v
+alias zshconfig="sudo kate ~/.zshrc"
+alias ohmyzsh="sudo leafpad ~/.oh-my-zsh"
+alias ins="sudo apt-get install"
+alias gc="git clone"
+alias updb="sudo updatedb"
+alias uu="sudo apt-get update"
+alias dp="sudo dpkg --configure -a"
+alias aurm="sudo apt autoremove"
+alias se="sudo apt-cache search"
+alias site="sudo wget -p -k --span-hosts -r --no-parent --html-extension --convert-links --domains="
+alias e="sudo leafpad"
+alias ni="sudo npm install"
+alias chmd="sudo chmod +x *"
+alias down="cd /home/betarax/Downloads"
+alias phantomjs="/home/betarax/Downloads/phantomjs-2.1.1-linux-x86_64/bin/phantomjs"
+alias p="sudo python"
+clear
+echo "alias p=python\n"\
+           "alias chmd=chmod +x *\n"\
+"alias down= cd downloads\n"\
+"alias zshconfig=sudo kate ~/.zshrc\n"\
+"alias ohmyzsh=sudo gedit ~/.oh-my-zsh\n"\
+"alias ins=sudo apt-get install\n"\
+"alias gc=git clone\n"\
+"alias updb=sudo updatedb\n"\
+"alias uu=sudo apt-get update\n"\
+"alias dp=dpkg --configure -a\n"\
+"alias aurm=sudo apt autoremove\n"\
+"alias se=sudo apt-cache search \n"\
+"alias site=wget -p -k -h --span-hosts -r --no-parent --html-extension --convert-links \n"\
+"alias e=sudo gedit\n"\
+"alias ni=npm install\n" | nms -a -f green
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export GOPATH="~/go"
+export PATH="$PATH:$GOPATH/bin"
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOPATH=/usr/local/opt/go/bin
+source "/home/betarax/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+function pingbak(){
+for aaa in {1..10}
+do
+echo -e "$(tput setaf $(shuf -i 1-10 -n 1))" & sleep 7;echo -e "$(tput setaf $(shuf -i 1-10 -n 1))" & wait; echo -e "$(tput setaf $(shuf -i 1-10 -n 1))" & ping 192.168.1.1 -c 1; echo -e "$(tput setaf $(shuf -i 1-10 -n 1))" & ping google.com -c 1;echo -e "$(tput setaf $(shuf -i 1-10 -n 1))" & curl ident.me;
+wait & done
+}
+alias pb="pingbak"
+alias ip='echo "$(tput sgr 0 1)$(tput bold)$(tput setaf 1)$(tput setab 0) Out IP : $(curl ident.me) $(tput setaf 3) Proxy IP : $(proxychains curl ident.me)$(tput sgr 0)"'  
+
+
+rastrenk(){
+RANDD=$RANDOM;
+RANGG=7;
+let SON="(($RANDD%$RANGG)+1)";
+RANDDB=$RANDOM;
+let SON2="(($RANDDB%$RANGG)+1)";
+if [ $SON -eq $SON2 ]; then
+RANDD=$RANDOM;
+RANDDB=$RANDOM;
+let SON="(($RANDD%$RANGG)+1)";
+RANDDB=$RANDOM;
+let son2="(($RANDDB%$RANGG)+1)";
+rastrenk;
+else
+local sonuc="$(tput setaf $SON)$(tput setab $SON2)";
+echo "$sonuc"
+fi;
+};
+
+
+
+
+function BoszMenu () {
+(~/beep/Music/Star\ Wars\ -\ Darth\ Vader &)
+echo "$(tput setaf 1)$(tput setab 0)tor & proxychains & chrome(1)$(tput sgr 0)? or $(tput setaf 2)$(tput setab 0)Selenium(3)$(tput sgr 0)? or $(tput setaf 3)$(tput setab 0)$(tput bold)Nothing(2)$(tput sgr 0)? $(tput setaf 4) $(tput setab 0)$(tput bold)updatedb(4)$(tput sgr 0)? $(tput setaf 5) $(tput setab 0)$(tput bold)reboot(5)$(tput sgr 0) $(tput setaf 6) $(tput setab 0)$(tput bold)poweroff(6)$(tput sgr 0) $(tput setaf 1) $(tput setab 0)$(tput bold)apt autoremove(7)$(tput sgr 0) $(tput setaf 2) $(tput setab 0)dpkgfix(8)$(tput sgr 0) $(tput setaf 3) $(tput setab 0)$(tput bold)apt-get update --fix-missing(9)$(tput sgr 0) $(tput setaf 4) $(tput setab 0)$(tput bold)uu(update(10))$(tput sgr 0) $(tput setaf 5) $(tput setab 0)justtor(11)$(tput sgr 0) $(tput setaf 6) $(tput setab 0)stoptor(12)$(tput sgr 0) $(tput setaf 1) $(tput setab 0)$(tput bold)gereksizler(13)$(tput sgr 0) $(tput setaf 2) $(tput setab 0)$(tput bold)zshconfig(14)$(tput sgr 0) extra== anketatak(15) & Exit(16) & Music(17) & startservices(18) -- olumculHataGiderme(19) -- menu generator(20) -- olumculTemizlik(21)"
+rastrenk
+resullt=rastrenk
+select yn in "$(tput setaf $(( ( RANDOM % 7 )  + 1 )))$(tput setab 0)$(tput bold)1$(tput sgr 0)" "$(resullt)2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21"; do
+    case $yn in
+        1 )sudo service tor start; sudo proxychains chromium-browser --no-sandbox; break;;
+        2 )echo "iptal"; break;;
+        3 )(python /home/betarax/myauto.py &); break;;
+        4 )updb; break;;
+        5 )reboot; break;;
+        6 )poweroff; break;;
+        7 )aurm; break;;
+        8 )dp; break;;
+        9 )sudo apt-get update --fix-missing; break;;
+        10 )uu; break;; 
+        11 )sudo service tor start; break;;
+        12 )sudo service tor stop; break;;
+        13 )sudo service virtualbox stop; sudo service tftpd-hpa stop; sudo service speech-dispatcher stop; sudo service privoxy stop; sudo service  postgresql stop; sudo service php7.0-fpm stop; sudo service openvpn stop; sudo service ninja stop; sudo service nginx stop; sudo service mysql stop; sudo service mysql-mmm-agent stop; sudo service mysql-mmm-monitor stop; sudo service monotone stop; sudo service monopd stop; sudo service mono-xsp4 stop; sudo service mongodb stop; sudo service jitsi-videobridge stop; sudo service clamav-daemon stop; sudo service clamav-freshclam stop; sudo service clamav-milter stop; sudo service clamsmtp stop; sudo service apache2 stop; sudo service anon-proxy stop; break;;
+        14 )sudo leafpad ~/.zshrc; break;;    
+        15 )sudo service tor start; sayac=0;for i in {0..100000..10};do type tor;echo "$(tput setaf 1) $(tput setab 0)";wait & hash -r;echo "$(tput setaf 2) $(tput setab 0)";wait & sudo service tor stop;echo "$(tput setaf 4) $(tput setab 0)";sleep 5;echo "$(tput setaf 4) $(tput setab 0)";wait & sudo service tor start;echo "$(tput setaf 5)"; wait & sleep $(( ( RANDOM % 7 )  + 1 ));echo "$(tput setaf 1) $(tput setab 0)";wait & clear;wait & $((sayac=sayac+1));clear & echo "$sayac" & clear;wait & sudo proxychains4 curl http://45.55.4.67:8080/gicrawler/rest/gis/vote/348;wait & done;echo "$(tput setaf 7) $(tput sgr 0)"; break;;
+        16 )exit; break;;
+        17 )cmus; break;;
+	18 )sudo service virtualbox start; sudo service tftpd-hpa start; sudo service speech-dispatcher start; sudo service privoxy start; sudo service  postgresql start; sudo service php7.0-fpm start; sudo service openvpn start; sudo service ninja start; sudo service nginx start; sudo service mysql start; sudo service mysql-mmm-agent start; sudo service mysql-mmm-monitor start; sudo service monotone start; sudo service monopd start; sudo service mono-xsp4 start; sudo service mongodb start; sudo service jitsi-videobridge start; sudo service clamav-daemon start; sudo service clamav-freshclam start; sudo service clamav-milter start; sudo service clamsmtp start; sudo service apache2 start; sudo service anon-proxy start; break;;
+	19 )sudo aptitude update && sudo aptitude install gtkorphan~;wait & sleep 5;wait & echo "ara ara durmak lazım";wait & sleep 2; wait & sudo aptitude update && sudo aptitude upgrade;wait & sudo aptitude -f; break;;
+	20 )echo "https://github.com/JamieCruwys/bash-menu-generator"; break;;
+	21 )sudo apt-get clean;wait & sudo apt-get autoclean;wait & sudo apt-get -f install;wait & sudo dpkg --configure -a; wait & sudo apt-get -f install; break;;
+	#18 )for ii in {1..100} do sudo python -u sikici.py sonDuzeltilmisProxy.txt;sudo python sikici.py 09012018Proxy.txt;sudo python sikici.py newPrxy.txt; sudo python sikici.py fastProxies.txt;sudo python sikici.py hidemy2.txt;sudo python sikici.py hidemyassProxy.txt; sudo python sikici.py httpOnlyProxyler.txt; sudo python sikici.py newPrxy.txt; sudo python sikici.py proxxx; sudo python sikici.py proxy2yeni.txt ; sudo python sikici.py temizProxyOutputTXTCleaned.txt; sudo python sikici.py Downloads/output.txt & done; break;;
+esac
+done
+}
+echo "Menu için BoszMenu veya kısayol bm yaz! By Bosz Mand. " | nms -a -f red
+#auto start BoszMenu----
+#BoszMenu
+alias bm="BoszMenu"
+echo "$(tput sgr 0 1)$(tput bold)$(tput setaf 2)$(tput setab 0)Menu için 'BoszMenu' veya kısayol 'bm' yaz!$(tput sgr 0) By Bosz Mand."
+source $ZSH/oh-my-zsh.sh
+######## Generated by Betty's install script
+#alias betty='/home/betarax/betty/main.rb'
+
+######## Generated by Betty's install script
+alias betty='/home/betarax/betty/main.rb'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#PROMPT='$(_user_host)$(_python_venv)%{$fg[cyan]%}%c $(git_prompt_info)%{$reset_color%}$(git_prompt_short_sha)%{$fg[magenta]%}$(_git_time_since_commit)$(git_prompt_status)${_return_status}➜ '
+source $HOME/antigen.zsh
+    
+# Load the oh-my-zsh's library
+antigen use oh-my-zsh
+
+antigen bundle <<EOBUNDLES
+    # Bundles from the default repo (robbyrussell's oh-my-zsh)
+    git
+
+    # Syntax highlighting bundle.
+    zsh-users/zsh-syntax-highlighting
+
+    # Fish-like auto suggestions
+    zsh-users/zsh-autosuggestions
+
+    # Extra zsh completions
+      zsh-users/zsh-completions
+EOBUNDLES
+
+# Load the theme
+antigen theme robbyrussell
+
+# Tell antigen that you're done
+antigen applysource /home/betarax/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source "$HOME/.slimzsh/slim.zsh" 
+
+source <(antibody init)
+
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+POWERLEVEL9K_MODE='nerdfont-complete'
+
+antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen apply
+source ~/.fonts/*.sh
+
+# If you want to use Liquid Prompt without bothering about its configuration,
+# just run the following command:
+# cp example.bashrc ~/.bashrc
+
+# The following is a minimalistic Bash config file
+
+# Use the system config if it exists
+#if [ -f /etc/bashrc ]; then
+#    . /etc/bashrc        # --> Read /etc/bashrc, if present.
+#elif [ -f /etc/bash.bashrc ]; then
+#    . /etc/bash.bashrc   # --> Read /etc/bash.bashrc, if present.
+#fi
+
+# The following lines are only for interactive shells
+#[[ $- = *i* ]] || return
+
+# Use Bash completion, if installed
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
+# Use Liquid Prompt
+#source ~/liquidprompt/liquidprompt
+#export LP_PS1=`echo -ne "[\${LP_USER}\${LP_HOST}:\${BLUE}\$(pwd)\${NO_COL}] \${LP_GIT} \\\$ "`
+#export ZPLUG_HOME=/path/to/.zplug
+#source ~/.zplug/init.zsh
+
+# Make sure to use double quotes
+#sudo zplug "zsh-users/zsh-history-substring-search"
+
+# Use the package as a command
+# And accept glob patterns (e.g., brace, wildcard, ...)
+#sudo zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
+
+# Can manage everything e.g., other person's zshrc
+#zplug "tcnksm/docker-alias", use:zshrc
+
+# Disable updates using the "frozen" tag
+#sudo zplug "k4rthik/git-cal", as:command, frozen:1
+
+# Grab binaries from GitHub Releases
+# and rename with the "rename-to:" tag
+#sudo zplug "junegunn/fzf-bin", \
+#    from:gh-r, \
+#    as:command, \
+#    rename-to:fzf, \
+#    use:"*darwin*amd64*"
+
+# Supports oh-my-zsh plugins and the like
+#sudo zplug "plugins/git",   from:oh-my-zsh
+
+# Also prezto
+#sudo zplug "modules/prompt", from:prezto
+
+# Load if "if" tag returns true
+#sudo zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+
+# Run a command after a plugin is installed/updated
+# Provided, it requires to set the variable like the following:
+ZPLUG_SUDO_PASSWORD="JwdR053"
+#zplug "jhawthorn/fzy", \
+#    as:command, \
+#    rename-to:fzy, \
+#    hook-build:"make && sudo make install"
+
+# Supports checking out a specific branch/tag/commit
+#zplug "b4b4r07/enhancd", at:v1
+#zplug "mollifier/anyframe", at:4c23cb60
+
+# Can manage gist file just like other packages
+#zplug "b4b4r07/79ee61f7c140c63d2786", \
+#    from:gist, \
+#    as:command, \
+ #   use:get_last_pane_path.sh
+
+# Support bitbucket
+#zplug "b4b4r07/hello_bitbucket", \
+#    from:bitbucket, \
+#    as:command, \
+#    use:"*.sh"
+
+# Rename a command with the string captured with `use` tag
+#zplug "b4b4r07/httpstat", \
+#    as:command, \
+#    use:'(*).sh', \
+ #   rename-to:'$1'
+
+# Group dependencies
+# Load "emoji-cli" if "jq" is installed in this example
+#zplug "stedolan/jq", \
+#    from:gh-r, \
+#    as:command, \
+#    rename-to:jq
+#zplug "b4b4r07/emoji-cli", \
+#    on:"stedolan/jq"
+# Note: To specify the order in which packages should be loaded, use the defer
+#       tag described in the next section
+
+# Set the priority when loading
+# e.g., zsh-syntax-highlighting must be loaded
+# after executing compinit command and sourcing other plugins
+# (If the defer tag is given 2 or above, run after compinit command)
+#zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Can manage local plugins
+#zplug "~/.zsh", from:local
+
+# Load theme file
+#zplug 'dracula/zsh', as:theme
+
+# Install plugins if there are plugins that have not been installed
+#if ! zplug check --verbose; then
+#    printf "Install? [y/N]: "
+#    if read -q; then
+#        echo; zplug install
+#    fi
+#fi
+
+# Then, source plugins and add commands to $PATH
+#zplug load --verbose
+sudo modprobe pcspkr
